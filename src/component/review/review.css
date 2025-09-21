@@ -1,0 +1,27 @@
+/* Amber-500 pagination bullet */
+.custom-pagination .swiper-pagination-bullet {
+  background-color: #f59e0b;  
+  opacity: 0.2;
+} 
+ .custom-pagination .swiper-pagination-bullet-active {
+  background-color: #f59e0b;
+  opacity: 1;
+}
+
+
+
+/* amber bullet */
+/* .swiper-pagination-bullet {
+  background: #f59e0b; 
+  opacity: 0.5;
+} */
+/* .swiper-pagination-bullet-active {
+  background: #f59e0b;
+  opacity: 1;
+} */
+
+/* arrow vertical middle + amber */
+/* .swiper-button-prev,
+.swiper-button-next {
+  color: #f59e0b;
+} */
