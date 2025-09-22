@@ -6,7 +6,7 @@ import Contact from '../contact/Contact';
 import MaterialsSection from '../../component/material/MaterialsSection';
 import Experience from '../../component/experience/Experience';
 import Review from '../../component/review/Review';
-import CircularText from '../../component/Circular/CircularText';
+// import CircularText from '../../component/Circular/CircularText';
 // import QrCodeSection from '../../component/qrcode/QrCodeSection';
 // import BarcodeSection from '../../component/barcode/BarcodeSection';
 // import ProductImage from '../../component/productimage/ProductImage';
@@ -26,12 +26,12 @@ const Home = () => {
      
             <Review />
            
-            <CircularText
+            {/* <CircularText
                 text="REACT*BITS*COMPONENTS*"
                 onHover="speedUp"
                 spinDuration={20}
                 className="custom-class"
-            />
+            /> */}
         </section>
     );
 };
