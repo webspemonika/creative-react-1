@@ -224,7 +224,7 @@ const NavMenus = () => (
         <nav className="navbar ">
           <div className="navbar-container lg:py-[30px] p-5 m-0 bg-red container mx-auto flex justify-between items-center ">
             {/* logo */}
-            <NavLink to="/"> <img alt="nav-logo" className={`${onScroll ? 'invert': ''}`} src="../../../public/nav-logo.png" /> </NavLink>
+            <NavLink to="/"> <img alt="nav-logo" className={`${onScroll ? 'invert': ''}`} src="/nav-logo.png" /> </NavLink>
 
             {/* desktop menu */}
             <NavMenus />

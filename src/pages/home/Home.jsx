@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../../component/hero/Hero';
 import WhyChooseUs from '../../component/whychooseus/WhyChoose';
 import Product from '../shop/Product';
-import Contact from '../contact/Contact';
+// import Contact from '../contact/Contact';
 import MaterialsSection from '../../component/material/MaterialsSection';
 import Experience from '../../component/experience/Experience';
 import Review from '../../component/review/Review';
@@ -19,7 +19,7 @@ const Home = () => {
             <Product headline={"Best Selling Product"} />
             <Experience />
             <MaterialsSection />
-            <Contact />
+      
             {/* <QrCodeSection/>
          <BarcodeSection/>
          <ProductImage/> */}
