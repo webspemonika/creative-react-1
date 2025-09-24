@@ -1,6 +1,7 @@
 import React from 'react';
 import bgImage from '../../images/banner-image.jpg'
 import BlurText from '../about/BlurText';
+import ContactForm from './ContactForm';
 const Contact = () => {
     // react bits handler
     const handleAnimationComplete = () => {
@@ -23,6 +24,7 @@ const Contact = () => {
                 </div>
 
             </section>
+            <ContactForm/>
         </>
     );
 };
