@@ -86,7 +86,7 @@ const Review = () => {
         <section className='lg:py-[100px] py-[50px]'>
             <div className='max-w-7xl mx-auto relative'>  {/* ← relative wrapper */}
                 {/* Header */}
-                <div className="header">
+                <div data-aos ="fade-up"  className="header">
                     <h5 className="text-center text-amber-600 text-lg font-semibold font-['Poppins'] uppercase tracking-[3.15px]">
                         Testimonials
                     </h5>
@@ -96,7 +96,7 @@ const Review = () => {
                 </div>
 
                 {/* Swiper Slider */}
-                <div className="relative ">
+                <div data-aos ="fade-up"  className="relative ">
                     <Swiper
                         slidesPerView={3}
                         spaceBetween={50}

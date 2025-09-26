@@ -16,7 +16,7 @@ const Product = ({ headline }) => {
             <h2 className="headingpart text-stone-900 text-5xl font-bold font-['Poppins'] text-center ">{headline}</h2>
             {/* categories..... */}
 
-            <div className="bg-[#eee] mx-auto flex justify-between p-0 lg:p-2 rounded-full  w-full lg:w-[400px] mt-5 mb-20">
+            <div  data-aos='fade-up'  className="bg-[#eee] mx-auto flex justify-between p-0 lg:p-2 rounded-full  w-full lg:w-[400px] mt-5 mb-20">
                 {
                     productArray.map((product, index) => (
                         <div onClick={()=>{setSelected( product)}}
@@ -27,7 +27,7 @@ const Product = ({ headline }) => {
             </div>
 
             {/* product-card.......... */}
-            <div className="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div data-aos='fade-up'   className="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {
                     filterValue.map((product, index) => (
                         <div className="cardimage  rounded-2xl shadow-lg" key={index}>

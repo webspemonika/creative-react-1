@@ -6,6 +6,8 @@ import Product from '../shop/Product';
 import MaterialsSection from '../../component/material/MaterialsSection';
 import Experience from '../../component/experience/Experience';
 import Review from '../../component/review/Review';
+import ContactForm from '../contact/ContactForm';
+// import DarkLight from '../../component/dark/DarkLight';
 // import CircularText from '../../component/Circular/CircularText';
 // import QrCodeSection from '../../component/qrcode/QrCodeSection';
 // import BarcodeSection from '../../component/barcode/BarcodeSection';
@@ -32,6 +34,8 @@ const Home = () => {
                 spinDuration={20}
                 className="custom-class"
             /> */}
+            <ContactForm/>
+            {/* <DarkLight/> */}
         </section>
     );
 };

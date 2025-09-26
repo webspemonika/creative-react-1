@@ -3,6 +3,34 @@
 
 
 @import "tailwindcss";
-@theme {
+@theme{
     --font-family: "Poppins", sans-serif;
 }
+
+/* @tailwind base; */
+/* @tailwind components; */
+@tailwind utilities;
+
+/* 🟡 পুরো Window Scrollbar Custom */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 10px;                /* scrollbar-এর মোট width */
+  }
+  ::-webkit-scrollbar-track {
+    background: #fef3c7;        /* Tailwind amber-100 এর কাছাকাছি */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #f59e0b;        /* Tailwind amber-500 */
+    border-radius: 9999px;      /* গোলাকার */
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d97706;        /* Tailwind amber-600 */
+  }
+
+  /* Firefox এর জন্য (optional) */
+  html {
+    scrollbar-width: bold;
+    scrollbar-color: #f59e0b #fef3c7;
+  }
+}
+/* কোনো container দরকার নেই—এগুলো window এর scrollbar কাস্টমাইজ করবে। */

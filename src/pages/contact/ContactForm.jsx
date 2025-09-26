@@ -1,4 +1,5 @@
 import React from 'react';
+import { Aos } from 'aos';
 import {
     FaMapMarkerAlt,
     FaPhoneAlt,
@@ -47,7 +48,7 @@ const ContactForm = () => {
             <div className="max-w-6xl  mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 px-5 lg:py-0 py-5">
                     {/* left */}
-                    <div>
+                    <div data-Aos='fade-right' >
                         <h2 className="text-4xl font-bold mb-4">
                             Contact <span className="text-amber-500">Us</span>
                         </h2>
@@ -83,7 +84,7 @@ const ContactForm = () => {
                         </div>
                     </div>
                     {/* right */}
-                    <div className="bg-transparent border border-gray-500 rounded-2xl p-8 w-full">
+                    <div data-aos='fade-left'  className="bg-transparent border border-gray-500 rounded-2xl p-8 w-full">
                         <h2 className="text-2xl font-bold mb-6 text-center">Add Details</h2>
                         <form className="space-y-5">
                             <input

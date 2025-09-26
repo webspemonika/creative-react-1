@@ -26,7 +26,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className=" py-10 md:py-24">
+    <section className=" py-10 md:py-24" data-aos= 'fade-up' >
       <div className="container max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4  md:items-start items-center">
 
         {/* বাম পাশের হেডিং */}
