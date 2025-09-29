@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Aos } from 'aos';
 import {
     FaMapMarkerAlt,
@@ -10,9 +10,24 @@ import {
     // FaXTwitter,
     FaDribbble
 } from "react-icons/fa";
+import { RxCross1 } from "react-icons/rx";
 
 
 const ContactForm = () => {
+
+    const [file, setFile] = useState(null);
+    const inputRef = useRef(null);
+
+    const handleChange = (e) => {
+        setFile(e.target.files[0]);
+    };
+
+    const handleRemove = () => {
+        setFile(null);
+        if (inputRef.current) {
+            inputRef.current.value = ""; // ইনপুট ফিল্ড রিসেট করবে
+        }
+    };
 
     const contactInfo = [
         {
@@ -48,7 +63,7 @@ const ContactForm = () => {
             <div className="max-w-6xl  mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 px-5 lg:py-0 py-5">
                     {/* left */}
-                    <div data-Aos='fade-right' >
+                    <div data-aos='fade-right' >
                         <h2 className="text-4xl font-bold mb-4">
                             Contact <span className="text-amber-500">Us</span>
                         </h2>
@@ -84,7 +99,7 @@ const ContactForm = () => {
                         </div>
                     </div>
                     {/* right */}
-                    <div data-aos='fade-left'  className="bg-transparent border border-gray-500 rounded-2xl p-8 w-full">
+                    <div data-aos='fade-left' className="bg-transparent border border-gray-500 rounded-2xl p-8 w-full">
                         <h2 className="text-2xl font-bold mb-6 text-center">Add Details</h2>
                         <form className="space-y-5">
                             <input
@@ -108,6 +123,37 @@ const ContactForm = () => {
      focus:border-amber-500 focus:ring-1 focus:ring-amber-500
      placeholder-gray-400 caret-amber-500 outline-none transition"
                             />
+
+                            <div className="relative">
+                                <input
+                                    ref={inputRef}
+                                    type="file"
+                                    accept=".jpg,.jpeg,.png,.avif"
+                                    onChange={handleChange}
+                                    className="w-full p-3 rounded-md bg-transparent border border-gray-400
+    focus:border-amber-500 focus:ring-1 focus:ring-amber-500
+    placeholder-gray-400 caret-amber-500 outline-none transition"
+                                />
+
+                                {/* ✅ Selected file name */}
+                                {/* {file && (
+                                    <p className="mt-2 text-sm text-gray-300 truncate">
+                                        {file.name}
+                                    </p>
+                                )} */}
+
+                                {/* ✅ Remove button (Cross) */}
+                                {file && (
+                                    <button
+                                        type="button"
+                                        onClick={handleRemove}
+                                        className="absolute right-2 top-1/2 -translate-y-1/2 text-amber-500 hover:text-amber-700"
+                                    >
+                                        <RxCross1 size={20} />
+                                    </button>
+                                )}
+                            </div>
+
                             <textarea
                                 rows="4"
                                 placeholder="What Would You Like to discuss?"
