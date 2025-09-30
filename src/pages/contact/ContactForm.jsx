@@ -60,8 +60,8 @@ const ContactForm = () => {
     ];
     return (
         <section className=' lg:py-[100px] py-[40px]  '>
-            <div className="max-w-6xl  mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 px-5 lg:py-0 py-5">
+            <div className="max-w-7xl  mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 px-5 space-y-10 lg:space-y-0">
                     {/* left */}
                     <div data-aos='fade-right' >
                         <h2 className="text-4xl font-bold mb-4">

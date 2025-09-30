@@ -7,7 +7,8 @@ import MaterialsSection from '../../component/material/MaterialsSection';
 import Experience from '../../component/experience/Experience';
 import Review from '../../component/review/Review';
 import ContactForm from '../contact/ContactForm';
-import Line from '../../component/line/Line';
+// import Line from '../../component/line/Line';
+// import BorderBeamDemo from '../../component/border/BorderBeamDemo';
 // import DarkLight from '../../component/dark/DarkLight';
 // import CircularText from '../../component/Circular/CircularText';
 // import QrCodeSection from '../../component/qrcode/QrCodeSection';
@@ -38,6 +39,7 @@ const Home = () => {
             <ContactForm/>
             {/* <DarkLight/> */}
             {/* <Line/> */}
+            {/* <BorderBeamDemo/> */}
         </section>
     );
 };

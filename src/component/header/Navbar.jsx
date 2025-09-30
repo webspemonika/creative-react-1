@@ -54,115 +54,6 @@ const Navbar = () => {
     },
   ];
 
-  // desktop menu3.......................................
-  // const NavMenus = () => (
-  //   <ul className="nav-menu lg:flex hidden">
-  //     {navlinks.map((link) => (
-  //       <li key={link.id} className="nav-item px-3 relative group">
-  //         <NavLink to={link.path} className={`nav-link flex items-center text-xl px-4 ${onScroll ? 'text-black' : 'text-white'} font-semibold font-['Poppins']`}>
-  //           {link.name} {link.icon && link.icon}
-  //         </NavLink>
-
-  //         {/* submenu */}
-  //         {link.children && (
-  //           <ul className="submenu bg-white w-[150px] absolute top-full left-0 invisible group-hover:visible translate-y-5 opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-y-0 shadow">
-  //             {link.children.map((child) => (
-  //               <li key={child.id} className="submenu-item px-3 py-2">
-  //                 <NavLink to={child.path} className="submenu-link">
-  //                   {child.name}
-  //                 </NavLink>
-  //               </li>
-  //             ))}
-  //           </ul>
-  //         )}
-  //       </li>
-  //     ))}
-  //   </ul>
-  // );
-//   const NavMenus = () => (
-//   <ul className="nav-menu lg:flex hidden">
-//     {navlinks.map((link) => (
-//       <li key={link.id} className="nav-item px-3 relative group">
-//         <NavLink
-//           to={link.path}
-//           className={({ isActive }) =>
-//             `nav-link flex items-center text-xl px-4 font-semibold font-['Poppins'] ${
-//               onScroll ? 'text-black' : 'text-white'
-//             } ${isActive ? 'text-purple-600' : ''}`
-//           }
-//         >
-//           {link.name} {link.icon && link.icon}
-//         </NavLink>
-
-//         {/* submenu */}
-//         {link.children && (
-//           <ul className="submenu bg-white w-[150px] absolute top-full left-0 invisible group-hover:visible translate-y-5 opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-y-0 shadow">
-//             {link.children.map((child) => (
-//               <li key={child.id} className="submenu-item px-3 py-2">
-//                 <NavLink
-//                   to={child.path}
-//                   className={({ isActive }) =>
-//                     `submenu-link ${isActive ? 'text-purple-600 font-bold' : ''}`
-//                   }
-//                 >
-//                   {child.name}
-//                 </NavLink>
-//               </li>
-//             ))}
-//           </ul>
-//         )}
-//       </li>
-//     ))}
-//   </ul>
-// );
-
-// const NavMenus = () => (
-//   <ul className="nav-menu lg:flex hidden">
-//     {navlinks.map((link) => (
-//       <li key={link.id} className="nav-item px-3 relative group">
-//         <NavLink
-//           to={link.path}
-//           className={({ isActive }) =>
-//             `
-//               nav-link flex items-center text-xl px-4 font-semibold font-['Poppins'] 
-//               ${onScroll ? 'text-black' : 'text-white'}
-//               hover:text-amber-600 transition-colors duration-300
-//               ${isActive ? 'text-amber-600 underline underline-offset-[20px]' : ''}
-//             `
-//           }
-//         >
-//           {link.name} {link.icon && link.icon}
-//         </NavLink>
-
-//         {/* submenu */}
-//         {link.children && (
-//           <ul className="submenu bg-white w-[150px] absolute top-full left-0 invisible group-hover:visible translate-y-5 opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-y-0 shadow">
-//             {link.children.map((child) => (
-//               <li key={child.id} className="submenu-item px-3 py-2">
-//                 <NavLink
-//                   to={child.path}
-//                   className={({ isActive }) =>
-//                     `
-//                       submenu-link block py-1 px-2 rounded
-//                       hover:bg-purple-100 hover:text-amber-600 transition duration-200
-//                       ${isActive ? 'text-amber-600 font-bold bg-purple-50' : 'text-gray-700'}
-//                     `
-//                   }
-//                 >
-//                   {child.name}
-//                 </NavLink>
-//               </li>
-//             ))}
-//           </ul>
-//         )}
-//       </li>
-//     ))}
-//   </ul>
-// );
-
-
-
-
 const NavMenus = () => (
   <ul className="nav-menu lg:flex hidden">
     {navlinks.map((link) => (
@@ -221,8 +112,9 @@ const NavMenus = () => (
     <>
       {/* Navbar */}
       <div className={`transition duration-300 ease-in-out fixed inset-x-0 z-50 ${onScroll ? 'bg-white ': 'bg-transparent '}`}>
-        <nav className="navbar ">
-          <div className="navbar-container lg:py-[30px] p-5 m-0 bg-red container mx-auto flex justify-between items-center ">
+        <nav className="">
+          {/* nav-container */}
+          <div className=" lg:py-[30px] p-5 m-0  max-w-7xl mx-auto flex justify-between items-center ">
             {/* logo */}
             <NavLink to="/"> <img alt="nav-logo" className={`${onScroll ? 'invert': ''}`} src="/nav-logo.png" /> </NavLink>
 
@@ -240,8 +132,8 @@ const NavMenus = () => (
             </div>
 
             {/* mobile menu icon */}
-            <div className="lg:hidden block">
-              <span className={`text-4xl text-white cursor-pointer  ${onScroll ? 'invert': ' ' }`}   onClick={() => setIsOpen(true)}> <MdOutlineMenu /></span>
+            <div className="lg:hidden inline-block">
+              <span className={`text-5xl text-white backdrop-blur-3xl cursor-pointer  ${onScroll ? 'invert': ' ' }`}   onClick={() => setIsOpen(true)}> <MdOutlineMenu /></span>
             </div>
           </div>
         </nav>
@@ -273,7 +165,7 @@ const MobileSidebar = ({ isOpen, setIsOpen, navlinks }) => {
            ${isOpen ? "translate-x-0" : "-translate-x-full"}`} >
         {/* header */}
         <div className=" sidebar-header flex justify-between items-center p-4 border-b">
-          <img src="../../../public/footer-logo.png" className="sidebar-title text-xl font-bold"/>
+          <img src="/footer-logo.png" className="sidebar-title text-xl font-bold"/>
           <span className="sidebar-close-btn text-3xl cursor-pointer" onClick={() => setIsOpen(false)}><MdClose /></span>
         </div>
 

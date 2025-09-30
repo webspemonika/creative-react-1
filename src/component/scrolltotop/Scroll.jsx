@@ -9,7 +9,7 @@ export default function Scroll() {
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-50 cursor-pointer w-16 h-16  bg-amber-500  rounded-full
+      className="fixed bottom-6 right-6 z-50 cursor-pointer lg:w-16 w-14  lg:h-16 h-14  bg-amber-500  rounded-full
       flex items-center justify-center  shadow-lg "
       onClick={scrollToTop}
     >

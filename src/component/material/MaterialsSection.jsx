@@ -264,13 +264,13 @@ const MaterialsSection = () => {
             </a>
           </div>
           {/* right */}
-          <div className=" flex lg:flex-row flex-col items-end space-x-0 lg:space-x-[42px] space-y-[40px] lg:space-y-0 lg:p-0 p-5">
+          <div className=" flex lg:flex-row flex-col items-end space-x-0 lg:-space-x-[0px] space-y-[40px] lg:space-y-0 lg:p-0 p-5">
             <div className="lg:space-y-[47px] space-y-[30px] space-x-0 ">
               <img src="/materials-1.png" alt="" className="inline-block w-full lg:w-[223px] h-[300px] rounded-2xl   lg:h-[230px]  mx-auto object-cover"/>
               <img src="/materials-2.png" alt="" className="inline-block w-full lg:w-[223px] h-[300px] rounded-2xl  lg:h-[320px] mx-auto object-cover"/>
             </div>
             <div className="">
-              <img src="/public/materials-3.png" alt="" className="inline-block w-[629px] lg:h-[445px] h-[300px]  mx-auto object-cover rounded-3xl lg:rounded-2xl" />
+              <img src="/materials-3.png" alt="" className="inline-block w-[629px] lg:h-[445px] h-[300px]  mx-auto object-cover rounded-3xl lg:rounded-2xl" />
             </div>
           </div>
         </div>

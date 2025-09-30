@@ -33,4 +33,9 @@
     scrollbar-color: #f59e0b #fef3c7;
   }
 }
+/*  */
+html, body {
+  overflow-x: hidden;
+}
+
 /* কোনো container দরকার নেই—এগুলো window এর scrollbar কাস্টমাইজ করবে। */
