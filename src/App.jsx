@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './component/header/Navbar';
 import Footer from './component/footer/Footer';
 import { Outlet } from 'react-router';
-import Scroll from './component/scrolltotop/Scroll';
+// import Scroll from './component/scrolltotop/Scroll';
 import CustomCursor from './component/customcursor/CustomCursor';
 import Preloader from './component/preloader/Preloader';
 import Aos from 'aos';
 import'aos/dist/aos.css'
+import ScrollToButton from './component/scroll/ScrollToButton';
 // import RightToolBar from './component/righttoolbar/RightToolBar';
 
 const App = () => {
@@ -39,7 +40,8 @@ const App = () => {
     <>
       {/* <RightToolBar/> */}
       <CustomCursor />
-      <Scroll />
+      {/* <Scroll /> */}
+      <ScrollToButton/>
       <Navbar />
       <Outlet />
       <Footer />

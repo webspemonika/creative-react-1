@@ -13,19 +13,19 @@ const Navbar = () => {
   //1..........................
   const [isOpen, setIsOpen] = useState(false);
 
-  let [onScroll , setOnScroll] =useState(false);
-  useEffect(()=>{
+  let [onScroll, setOnScroll] = useState(false);
+  useEffect(() => {
     let scrollHandler = () => {
-      if(window.scrollY > 0){
+      if (window.scrollY > 0) {
         setOnScroll(true)
-      }else{
+      } else {
         setOnScroll(false);
       }
     }
 
 
-    window.addEventListener('scroll' , scrollHandler )
-  },[])
+    window.addEventListener('scroll', scrollHandler)
+  }, [])
   //2....................................
   const navlinks = [
     { id: 1, name: "Furniture", path: "/", icon: "" },
@@ -54,56 +54,56 @@ const Navbar = () => {
     },
   ];
 
-const NavMenus = () => (
-  <ul className="nav-menu lg:flex hidden">
-    {navlinks.map((link) => (
-      <li key={link.id} className="nav-item px-3 relative group">
-        <NavLink
-          to={link.path}
-          className={({ isActive }) =>
-            `
+  const NavMenus = () => (
+    <ul className="nav-menu lg:flex hidden">
+      {navlinks.map((link) => (
+        <li key={link.id} className="nav-item px-3 relative group">
+          <NavLink
+            to={link.path}
+            className={({ isActive }) =>
+              `
               nav-link flex items-center gap-1 text-xl px-4 font-semibold font-['Poppins'] 
               ${onScroll ? 'text-black' : 'text-white'}
               hover:text-amber-600 transition-colors duration-300
               ${isActive ? 'text-amber-600 underline underline-offset-[20px] ' : ''}
             `
-          }
-        >
-          {link.name} {link.icon && link.icon}
+            }
+          >
+            {link.name} {link.icon && link.icon}
 
-          {/* show arrow only if children exist */}
+            {/* show arrow only if children exist */}
+            {link.children && (
+              <FaChevronDown
+                className="ml-1 text-sm transition-transform duration-300 group-hover:rotate-180"
+              />
+            )}
+          </NavLink>
+
+          {/* submenu */}
           {link.children && (
-            <FaChevronDown
-              className="ml-1 text-sm transition-transform duration-300 group-hover:rotate-180"
-            />
-          )}
-        </NavLink>
-
-        {/* submenu */}
-        {link.children && (
-          <ul className="submenu bg-white w-[150px] rounded-xl absolute top-full left-0 invisible group-hover:visible translate-y-5 opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-y-0 shadow">
-            {link.children.map((child) => (
-              <li key={child.id} className="submenu-item px-3 py-2">
-                <NavLink
-                  to={child.path}
-                  className={({ isActive }) =>
-                    `
+            <ul className="submenu bg-white w-[150px] rounded-xl absolute top-full left-0 invisible group-hover:visible translate-y-5 opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-y-0 shadow">
+              {link.children.map((child) => (
+                <li key={child.id} className="submenu-item px-3 py-2">
+                  <NavLink
+                    to={child.path}
+                    className={({ isActive }) =>
+                      `
                       submenu-link block py-1 px-2 rounded
                       hover:bg-amber-100 hover:text-amber-600 transition duration-200
                       ${isActive ? 'text-amber-600 font-bold bg-amber-100' : 'text-gray-700'}
                     `
-                  }
-                >
-                  {child.name}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        )}
-      </li>
-    ))}
-  </ul>
-);
+                    }
+                  >
+                    {child.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
 
 
 
@@ -111,12 +111,12 @@ const NavMenus = () => (
   return (
     <>
       {/* Navbar */}
-      <div className={`transition duration-300 ease-in-out fixed inset-x-0 z-50 ${onScroll ? 'bg-white ': 'bg-transparent '}`}>
+      <div className={`transition duration-300 ease-in-out fixed inset-x-0 z-50 ${onScroll ? 'bg-white ' : 'bg-transparent '}`}>
         <nav className="">
           {/* nav-container */}
           <div className=" lg:py-[30px] p-5 m-0  max-w-7xl mx-auto flex justify-between items-center ">
             {/* logo */}
-            <NavLink to="/"> <img alt="nav-logo" className={`${onScroll ? 'invert': ''}`} src="/nav-logo.png" /> </NavLink>
+            <NavLink to="/"> <img alt="nav-logo" className={`${onScroll ? 'invert' : ''}`} src="/nav-logo.png" /> </NavLink>
 
             {/* desktop menu */}
             <NavMenus />
@@ -133,7 +133,7 @@ const NavMenus = () => (
 
             {/* mobile menu icon */}
             <div className="lg:hidden inline-block">
-              <span className={`text-5xl text-white backdrop-blur-3xl cursor-pointer  ${onScroll ? 'invert': ' ' }`}   onClick={() => setIsOpen(true)}> <MdOutlineMenu /></span>
+              <span className={`text-5xl text-white backdrop-blur-3xl cursor-pointer  ${onScroll ? 'invert' : ' '}`} onClick={() => setIsOpen(true)}> <MdOutlineMenu /></span>
             </div>
           </div>
         </nav>
@@ -161,11 +161,11 @@ const MobileSidebar = ({ isOpen, setIsOpen, navlinks }) => {
       <div className={` sidebar-container fixed top-0 left-0 z-50
           h-full w-[80vw] bg-white shadow-lg  
           transform transition-transform duration-500 ease-in-out
-          
-           ${isOpen ? "translate-x-0" : "-translate-x-full"}`} >
+           ${isOpen ? "translate-x-0 " : "-translate-x-full "}`}
+      >
         {/* header */}
         <div className=" sidebar-header flex justify-between items-center p-4 border-b">
-          <img src="/footer-logo.png" className="sidebar-title text-xl font-bold"/>
+          <img src="/footer-logo.png" className="sidebar-logo " />
           <span className="sidebar-close-btn text-3xl cursor-pointer" onClick={() => setIsOpen(false)}><MdClose /></span>
         </div>
 
@@ -193,7 +193,9 @@ const MobileSidebar = ({ isOpen, setIsOpen, navlinks }) => {
       </div>
 
       {/* overlay */}
-      {isOpen && (<div className="fixed  inset-0 z-45  bg-amber-500" ></div>)}
+      {isOpen && (<div className="fixed  inset-0 z-0  bg-amber-500" >
+
+      </div>)}
     </>
   );
 };
