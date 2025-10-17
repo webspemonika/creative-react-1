@@ -1,8 +1,10 @@
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { BrowserRouter, Routes, Route } from "react-router";
+// import { BrowserRouter, Routes, Route } from "react-router";
+import { HashRouter as Router, Routes, Route, HashRouter } from "react-router";
+
 import Home from './pages/home/Home.jsx'
 import Contact from './pages/contact/Contact';
 import About from './pages/about/About';
@@ -17,8 +19,8 @@ import Shop from './pages/shop/Shop.jsx';
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
+  <>
+    <HashRouter>
       <Routes>
         <Route element={<App />}>
           <Route path="/" element={<Home />} />
@@ -28,6 +30,6 @@ createRoot(document.getElementById('root')).render(
 
         </Route>
       </Routes>
-    </BrowserRouter>
-  </StrictMode>
+    </HashRouter>
+  </>
 )
